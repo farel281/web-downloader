@@ -1,0 +1,320 @@
+/* =============================
+   GLOBAL RESET
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =============================
+   BODY & BACKGROUND
+============================= */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #14213d, #1e3a8a);
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* SOFT LIGHT BACKGROUND */
+.bg {
+  position: absolute;
+  width: 150vw;
+  height: 150vh;
+  background: radial-gradient(circle, #3b82f633, transparent 70%);
+  top: -25%;
+  left: -25%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =============================
+   CARD — SHARP GLASS
+============================= */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  padding: 38px;
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* BORDER GLOW */
+.gradient-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 1px;
+  background: linear-gradient(130deg, #2563eb55, #3b82f655, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =============================
+   TEXT
+============================= */
+h1 {
+  color: #eaf2ff;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  font-size: 32px;
+}
+
+.sub {
+  color: #94a3b8;
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+
+/* =============================
+   INPUT
+============================= */
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+input {
+  flex: 1;
+  min-width: 120px;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #0b1220;
+  color: #e5edff;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* =============================
+   BUTTON
+============================= */
+button {
+  border: none;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #2563eb55;
+}
+
+/* =============================
+   PLATFORM
+============================= */
+.platform {
+  color: #93c5fd;
+  font-size: 14px;
+  margin: 6px 0 10px;
+}
+
+/* =============================
+   PROGRESS
+============================= */
+.scan-bar {
+  height: 6px;
+  border-radius: 20px;
+  background: #0b1220;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.scan-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  transition: 1s;
+}
+
+/* =============================
+   PREVIEW
+============================= */
+.preview {
+  height: 115px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  background: #0b1220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8aa4d6;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* =============================
+   SELECT
+============================= */
+.select {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #0b1220;
+  color: #e5edff;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+select option {
+  background: #0f172a;
+}
+
+/* =============================
+   SLIDER
+============================= */
+.slider-wrap {
+  margin-top: 20px;
+}
+
+.slider-top {
+  display: flex;
+  justify-content: space-between;
+  color: #c7d7ff;
+  margin-bottom: 6px;
+}
+
+input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 5px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+/* =============================
+   AI STATUS & DOWNLOAD
+============================= */
+.ai-status {
+  margin-top: 12px;
+  color: #93c5fd;
+  font-size: 14px;
+}
+
+.download {
+  width: 100%;
+  margin-top: 24px;
+  padding: 15px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+}
+
+/* =============================
+   SHOW / HIDE
+============================= */
+.quality,
+.slider-wrap {
+  transition: 0.35s;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+.bg,
+.gradient-border,
+.glow,
+.fx,
+.overlay {
+  pointer-events: none;
+}
+
+/* =============================
+   RESPONSIVE MEDIA QUERIES
+============================= */
+
+/* TABLET / LAPTOP */
+@media (max-width: 1024px) {
+  .card {
+    max-width: 450px;
+    padding: 28px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .sub {
+    font-size: 15px;
+  }
+
+  .preview {
+    height: 100px;
+  }
+
+  input, select, button {
+    padding: 12px;
+  }
+}
+
+/* MOBILE / HP */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .sub {
+    font-size: 13px;
+  }
+
+  .preview {
+    height: 90px;
+    font-size: 12px;
+  }
+
+  input, select, button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .slider-top, .platform, .ai-status {
+    font-size: 12px;
+  }
+}
+

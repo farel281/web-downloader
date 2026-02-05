@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rellx AI Downloader V3</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+  <div class="gradient-border"></div>
+
+  <h1>⚡ Rellx Media Downloader</h1>
+  <p class="sub">Media Downloader</p>
+
+  <div class="input-box">
+    <input id="urlInput" placeholder="Paste media URL here..." />
+    <button id="detectBtn">Detect</button>
+  </div>
+
+  <div class="platform" id="platformText">Waiting for URL…</div>
+
+  <div class="scan-bar">
+    <div class="scan-progress"></div>
+  </div>
+
+  <div class="preview" id="previewBox">
+    <span>Preview Ready</span>
+  </div>
+
+  <!-- MEDIA TYPE -->
+  <select id="mediaType" class="select">
+    <option value="video">🎬 Video</option>
+    <option value="audio">🎵 Audio</option>
+    <option value="photo">🖼️ Foto</option>
+  </select>
+
+  <!-- VIDEO QUALITY -->
+  <select id="videoQuality" class="select quality">
+    <option>4K</option>
+    <option>1080p</option>
+    <option>720p</option>
+    <option>480p</option>
+  </select>
+
+  <!-- AUDIO QUALITY -->
+  <select id="audioQuality" class="select quality hidden">
+    <option>320 kbps</option>
+    <option>256 kbps</option>
+    <option>192 kbps</option>
+    <option>128 kbps</option>
+  </select>
+
+  <!-- PHOTO QUALITY -->
+  <select id="photoQuality" class="select quality hidden">
+    <option>Original</option>
+    <option>2048px</option>
+    <option>1080px</option>
+    <option>720px</option>
+  </select>
+
+  <!-- AI SLIDER (VIDEO ONLY) -->
+  <div id="aiSlider" class="slider-wrap">
+    <div class="slider-top">
+      <span>AI Enhancement</span>
+      <span id="qualityValue">80%</span>
+    </div>
+    <input type="range" id="qualitySlider" min="10" max="100" value="80">
+  </div>
+
+  <div class="ai-status" id="aiStatus">Idle</div>
+
+  <button class="download">Download</button>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
